@@ -1,32 +1,27 @@
-let message = 'HelloWorld';
-console.log(typeof(message));
+fetch('https://randomuser.me/api/')
+    .then(response => response.json())
+    .then(data => {
+        const user = data.results[0];
+        const userCard = createUserCard(user);
+        document.getElementById('userCards').appendChild(userCard);
+    })
+    .catch(error => console.error('Error fetching user data:', error));
 
-const test = function () {
-    console.log('Message')
+function createUserCard(user) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const avatar = document.createElement('img');
+    avatar.classList.add('avatar');
+    avatar.src = user.picture.large;
+    card.appendChild(avatar);
+
+    const name = document.createElement('div');
+    name.textContent = `${user.name.first} ${user.name.last}`;
+    card.appendChild(name);
+
+    const email = document.createElement('div');
+    email.textContent = user.email;
+    card.appendChild(email);
+    return card;
 }
-
-const list = [1,2,3,4,5,6,7,8,9]
-
-console.log(list[3])
-
-const object = {key1: '1', key2: '2'}
-
-console.log(object.key1);
-
-function sleepSetTimeout(ms, callback) {
-    setTimeout(callback, ms);
-}
-
-let elem = document.getElementById("para");
-let color;
-let conent;
-
-elem.innerHTML =  '<p>testtestetst</p>';
-
-/*function changeColor(newColor) {
-    for (let i = 0; i < 100; i++) {
-        conent = '<p>' + String(i) + '</p>';
-        elem.innerHTML = conent ;
-    }
-}
-*/
