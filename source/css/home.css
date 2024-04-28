@@ -99,7 +99,7 @@
         left: 100%;
         top: 93px; /* メニューを画面の外に飛ばす */
         z-index: 99;
-        background: #96ffa3;
+        background: #00ff1e9d;
         transition: .5s;
         text-align: center;
         padding-top: 20px;
@@ -120,7 +120,7 @@
         font-size: 30px;
         margin: 10px;
         padding: 1px;
-        color: #ffffff;
+        color: #575757;
         text-decoration: none;
       }
     
