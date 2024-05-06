@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+<body>
+    <input id="typeUrl" type="text"></input>
+    <input id="typeMethod" type="text"></input>
+    <div id="output"></div>
+    <script>
+        const url = document.getElementById("typeUrl").value;
+        const method = document.getElementById("typeMethod").value;
+        const methoD = method;
+        const option = {method: methoD, headers: {'content-Type': 'application/json'},body: JSON.stringtify(date)};
+        fetch(url, option).then((res)=> res.json()).then(console.log).catch(console.error);
+    </script>
+</body>
+</html>
+fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data) 
+  })
