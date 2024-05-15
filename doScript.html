@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"></head>
+<body>
+<input type="text" id="typeJs">alert("Hello, World");</input>
+<input type="button" clicked="buttonListener();" id="JsButton">実行する</input>
+</body>
+<script>
+	//html要素を取得
+	const JsCodeElement = document.getElementById("typeJs");
+	//要素の値を文字列形式で取得
+	const JsCodeText = JsCodeElement.value;
+	//文字列を関数に変換
+	const JsCode = eval(JsCode);
+	//ボタンが押されたら実行
+	const buttonListener = function () {
+		JsCode();
+	};
+</script>
+</html>
