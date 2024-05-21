@@ -1,0 +1,181 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>【htmlダウンローダー】手軽にWebページをローカルに保存</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	header{
+		
+		
+	}
+	.main-h1{
+		border: solid 1px black;
+	}
+	.attention{
+		color: red;
+		font-size: 7px;
+	}
+	.inputTitle{
+		font-size: 12px;
+		border-bottom: dotted 1px red;
+		margin-left: 70px;
+		margin-top: 40px;
+	}
+	.form{
+		background-color: rgba(84,255,69,0.49);
+		box-shadow: 12px 12px 31px -22px #777777;
+		border-radius: 12px;
+		margin: 0px;
+		padding: 10px;
+		margin: 5px 20px;
+	}
+	</style>
+</head>
+<body>
+
+<header>
+	<h1>sonnekoのサイト</h1>
+	<h3>便利Webツール</h3>
+	<p>今回は一気にhtmlをダウンロードすることができるツールです。</p>
+	
+	<hr>
+
+</header>
+
+<main>
+<h1 class="main-h1">htmlダウンローダー</h1>
+<dev style="margin-top: 30px;"></div>
+<div class="form">
+
+	<div class="inputElement inputUrl">
+		<p class="inputTitle">URL</p>
+		<p class="attention">URLにパラメーターを追加したときは正しく動作しないことがあります。</p>
+		<p class="attention">ヒント:&#180複数のURLを追加するにはJSONを記述します。</p>
+		<input type="text" id="inputUrlElement"></input>
+		<p id="urlErrorText"></p>
+	</div>
+
+	<div class="inputElement inputMethod">
+		<p class="inputTitle">保存先</p>
+		<p class="attention"><a href="https://drive.google.com/drive/folders/1BnAPrOM-LqcQXG6GfQSrnz8eVgqx51hA?usp=share_link">OneDriveを選択した時の保存先はこちら</a></p>
+		<p>OneDriveを選択したときは、このデバイスのデータ通信量はほぼ0です。</p>
+		<p>保存先をこのデバイスにして、大量のhtmlをダウンロードするときは、データ通信量にご注意ください。</p>
+		<select id="inputMethodElement">
+			<option>OneDriveの共有フォルダ</option>
+			<option>このデバイス</option>
+			<option>ロイロノートのフォルダ（開発中）</option>
+		</select>
+		<p id="methodErrorText"></p>
+	</div>
+
+	<p class="attention">デバイスに大量に保存するときはWiFi推奨</p>
+	<button clicked="init();">実行する</button>
+	<p id="statementShow"></p>
+
+</div>
+</main>
+
+<footer>
+	<p>By&#180sonneko</p>
+</footer>
+
+</body>
+
+
+<script>
+//要素の取得
+//入力関係
+const elementInputUrl = document.getElementById('inputUrlElement');
+const elementInputMethod = document.getElementById('inputUrlElement');
+//出力関係
+const elementOutputUrl = document.getElementById('urlErrorText');
+const elementOutputMethod = document.getElementById('methodErrorText');
+const elementOutputStatement = document.getElementById('statementShow');
+
+//各種変数の定義
+let urlList =[];
+let urlTemporary = [];
+const applicationUrl = '';
+
+//get requestを送信し、レスポンスを返す
+//または、GASに送信
+const getRequest = function (urlString) {
+	if(method === 'このデバイス') {
+		fetch(urlString).then(response => return response);
+	}else if(method === 'OneDriveの共有フォルダ') {
+		const targetUrl = applicationUrl + '?url=' + urlString;
+		fetch(targetUrl);
+	}
+};
+
+//htmlから抽出したURLのリストを返す。
+const getUrl = function(htmlStringDate) {
+	let urlList = [];
+	//抽出する
+	return urlList;
+};
+
+let startAddress, layer, method;
+let downloadDate;
+
+//ボタンが押されたら
+function init() {
+
+	//処理中と表示する
+	elementOutputStatement.textContent('---------処理中---------<br>時間がかかる場合があります。')
+	
+	//リセット処理
+	urlList = [];
+	urlTemporary = [];
+	downloadDate = undefined;
+	
+	//要素の状態を取得
+	startAddress = elementInputUrl.value;
+	method = elementInputMethod.value;
+
+	if(startAdress.substr(1, 8) === 'https://' || startAddress.substr(1,7) === 'http://') {
+		if(method === 'OneDriveの共有フォルダ') {
+			getRequest(startAddress);
+			downloadDate = undefined;
+			elementOutputMethod.textContent('後で共有フォルダから見ることができます。');
+		} else if (method === 'このデバイス') {
+			downloadDate = getRequest(startAddress);
+			elementOutputMethod.textContent('このデバイスにzipファイルで保存されます。');
+		} else if (method === 'ロイロノートのフォルダ') {
+			//要開発
+			elementOutputMethod.textContent('開発中です。まだ対応していません。');
+		}
+	} else if(startAddress.substr(1, 1) === '[' && startAddress.substr(-1) === ']') {
+		urlList = JSON.parse(startAddress);
+		if(not(startAddress[startAddress.length] === undefined)) {
+			elementOutputStatement.textContent('エラー');
+		}
+		//保存
+		if(method === 'OneDriveの共有フォルダ') {
+			for(int i; i<=urlList.length; i++) {
+				getRequest(urlList[i]);
+			}
+			downloadDate = undefined;
+		} else if (method === 'このデバイス') {
+			downloadDate = [];
+			for(int i; i<=urlList.length; i++) {
+				downloadDate.push(getRequest(urlList[i]));
+			}
+		} else if (method === 'ロイロノートのフォルダ') {
+			//要開発
+			elementOutputStatement.textContent('エラー');
+		}
+	
+	//downloadDateをダウンロードさせる処理
+	if(typeof(downloadDate) === 'object') {
+		
+		
+	} else if (typeof(downloadDate) === '') {
+		
+		
+	}
+
+}
+</script>
+</html>
