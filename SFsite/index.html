@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>テーマ || 2024年大阪星光学院スクールフェア(SF)</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="2024年度大阪星光学院スクールフェア(SF)特設サイトです"
+    />
+    <!-- favicon/webclipicon -->
+    <link rel="icon" href="https://sf24.glitch.me/images/icon.ico" />
+    <link rel="icon" href="./images/icon512x512.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./images/icon192x192.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="apple-mobile-web-app-title" content="Seiko SF '24" />
+    <meta
+      name="application-name"
+      content="テーマ || 2024年大阪星光学院スクールフェア(SF)特設サイト"
+    />
+    <!-- ogp -->
+    <meta
+      property="og:site_name"
+      content="テーマ || 2024年大阪星光学院スクールフェア(SF)特設サイト"
+    />
+    <meta property="og:url" content="https://sf24.glitch.me/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="テーマ || 2024年大阪星光学院スクールフェア(SF)特設サイト"
+    />
+    <meta
+      property="og:description"
+      content="2024年度大阪星光学院スクールフェア(SF)特設サイトです"
+    />
+    <meta property="og:image" content="./images/logo1200x630.jpg" />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preload" href="./images/snapshots/01.webp" as="image" />
+    <link rel="preload" as="font" href="./assets/Oswald-Regular.ttf" />
+    <style>
+      /*メイン画像*/
+      .topImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: min(100vw, 100vh);
+        background-size: cover;
+        background-position: center;
+        transition: opacity ease 1s;
+        opacity: 0;
+      }
+      #topImage1 {
+        position: relative;
+        background-image: url("./images/snapshots/01.webp");
+        z-index: 27;
+        opacity: 1;
+      }
+      #topImage2 {
+        background-image: url("./images/snapshots/02.webp");
+        z-index: 28;
+      }
+      #topImage3 {
+        background-image: url("./images/snapshots/03.webp");
+        z-index: 29;
+      }
+      #topImage4 {
+        background-image: url("./images/snapshots/04.jpeg");
+        z-index: 30;
+      }
+      #topImage5 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: min(100vw, 100vh);
+        z-index: 40;
+      }
+      #topImage5::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 25vw solid #666699aa; /* 好みで高さ色を変えてください */
+        border-right: 75vw solid transparent;
+        z-index: 45;
+      }
+      #topImage5::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: min(100vw, 100vh);
+        background-color: rgba(0, 0, 0, 0.2);
+        background-image: radial-gradient(#444 30%, transparent 31%),
+          radial-gradient(#444 30%, transparent 31%);
+        background-size: 2px 2px;
+        background-position: 0 0, 2px 2px;
+        z-index: 40;
+      }
+      h1.home {
+        font-weight: normal;
+        font-family: serif;
+        margin: 0;
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        color: var(--light);
+        font-size: calc(6vw + 15px);
+        z-index: 100;
+        text-shadow: 0.1em 0.1em 0.1em var(--shadow);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="openbtn"><span></span><span></span><span></span></div>
+      <div id="g-nav">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="./info.html">INFO</a></li>
+          <li><a href="./booth.html">BOOTH</a></li>
+          <li><a href="./stage.html">STAGE</a></li>
+          <li><a href="./blog.html">BLOG</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="topImage" id="topImage1"></div>
+    <div class="topImage" id="topImage2"></div>
+    <div class="topImage" id="topImage3"></div>
+    <div class="topImage" id="topImage4"></div>
+    <div id="topImage5"><h1 class="home">今年のテーマを入力</h1></div>
+    <a href="./index.html"><div id="cc1" style="color: var(--light)">Seiko SF '24</div></a>
+    <div id="headerBlack"></div>
+    <main class="arrow">
+      <figure class="mother">
+        <p>あと<span id="countDown">???</span>日</p>
+      </figure>
+      <section>
+        <h2>Latest News</h2>
+        <table class="news">
+          <tbody>
+            <tr>
+              <td>6/6</td>
+              <td><a href="#">お知らせお知らせお知らせ</a></td>
+            </tr>
+            <tr>
+              <td>5/30</td>
+              <td><a href="#">お知らせお知らせお知らせ</a></td>
+            </tr>
+            <tr>
+              <td>5/27</td>
+              <td><a href="#">お知らせお知らせお知らせ</a></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="2">
+                <a href="#">《全てのお知らせをみる》</a>
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <section class="infoflex">
+        <a href="./info.html" class="info"> 開催情報はこちら </a>
+        <a href="https://sf24.glitch.me/.booth" class="info"> 各出し物はこちら </a>
+      </section>
+      <section>
+        <h2 id="colorChange">Introduction</h2>
+        <div class="flexChild message">
+          <p>
+            (以下ランダム生成文章)<br />スクールフェアに関する挨拶みたいな文章を書く。スクールフェアに関する挨拶みたいな文章。スクールフェアに関する挨拶みたいな文章を書く。
+            スクールフェアに関する挨拶みたいな文章。スクールフェアに関する挨拶みたいな文章を書く。スクールフェアに関する挨拶みたいな文章を書く。<br />
+            スクールフェアに関する挨拶みたいな文章。スクールフェアに関する挨拶みたいな文章を書く。スクールフェアに関する挨拶みたいな文章。スクールフェアに関する挨拶みたいな文章を書く。<br />
+            スクールフェアに関する挨拶みたいな文章。スクールフェアに関する挨拶みたいな文章を書く。<br />
+            スクールフェアに関する挨拶みたいな文章。スクールフェアに関する挨拶みたいな文章。
+          </p>
+          <div>
+            <p>
+              n月n日<br />
+              2024年　SF運営代表　XX XX
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="container light">
+        <div class="cells">
+          <h2>What is "SF"?</h2>
+          <img
+            src="./images/snapshots/04.jpeg"
+            alt="sf1"
+            width="320"
+            height="240"
+            class="cellsImage ap"
+            loading="lazy"
+          />
+        </div>
+        <div class="cells flexChild">
+          <p>
+            SFの説明を記入してください。SFの説明を記入してください。SFの説明を記入してください。SFの説明を記入してください。<br />
+            SFの説明を記入してください。SFの説明を記入してください。SFの説明を記入してください。SFの説明を記入してください。<br />
+            SFの説明を記入してください。SFの説明を記入してください。SFの説明を記入してください。SFの説明を記入してください。<br />
+          </p>
+        </div>
+      </section>
+      <section class="container light">
+        <div class="cells">
+          <h2>What is "Seiko"?</h2>
+          <img
+            src="./images/snapshots/03.webp"
+            alt="seiko"
+            width="320"
+            height="240"
+            class="cellsImage ap"
+            loading="lazy"
+          />
+        </div>
+        <div class="cells flexChild">
+          <p>
+            星光の説明を記入してください。星光の説明を記入してください。星光の説明を記入してください。星光の説明を記入してください。<br />
+            星光の説明を記入してください。星光の説明を記入してください。星光の説明を記入してください。星光の説明を記入してください。<br />
+            星光の説明を記入してください。星光の説明を記入してください。星光の説明を記入してください。星光の説明を記入してください。<br />
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script>
+      //手作りスライドショー(ガチで時間かかった)
+      let topImage = 0;
+      let t2 = document.getElementById("topImage2");
+      let t3 = document.getElementById("topImage3");
+      let t4 = document.getElementById("topImage4");
+      window.addEventListener("load", function () {
+        setInterval(function () {
+          topImage++;
+          if (topImage % 8 == 1) {
+            t2.style.opacity = 1;
+          }
+          if (topImage % 8 == 4) {
+            t2.style.opacity = 0;
+          }
+          if (topImage % 8 == 3) {
+            t3.style.opacity = 1;
+          }
+          if (topImage % 8 == 6) {
+            t3.style.opacity = 0;
+          }
+          if (topImage % 8 == 5) {
+            t4.style.opacity = 1;
+          }
+          if (topImage % 8 == 7) {
+            t4.style.opacity = 0;
+          }
+        }, 1500);
+      });
+      //Seikoの左上のやつ
+      let a = document.getElementById("cc1");
+      window.addEventListener("scroll", function () {
+        let h1 = t2.offsetHeight - 50;
+        console.log(h1);
+        let c = document.documentElement.scrollTop || document.body.scrollTop;
+        if (c < h1) {
+          a.style.color = "var(--light)";
+        } else {
+          a.style.color = "var(--dark)";
+        }
+      });
+
+      //背景変色
+      //高さで表示非表示
+      function backShift() {
+        let clientRect = document
+          .getElementById("colorChange")
+          .getBoundingClientRect();
+        if (clientRect.top < 0) {
+          document.body.style.backgroundColor = "var(--dark)";
+        } else {
+          document.body.style.backgroundColor = "var(--light)";
+        }
+      }
+      window.addEventListener("scroll", function () {
+        backShift();
+      });
+      backShift;
+
+      //写真表示
+      let oElements = document.getElementsByClassName("cellsImage");
+      window.addEventListener("scroll", function () {
+        ap();
+      });
+      ap();
+      function ap() {
+        for (let i = 0; i < oElements.length; i++) {
+          var tag = oElements[i];
+          var scr = tag.getBoundingClientRect();
+          var y = window.innerHeight - scr.top;
+          if (y < window.innerHeight * 0.3) {
+            tag.classList.add("ap");
+          } else {
+            tag.classList.remove("ap");
+          }
+        }
+      }
+      //カウントダウン
+      let CD = document.getElementById("countDown");
+      // 現在の「曜日 月 日 年 時 分 秒」を取得
+      let nowDate = new Date();
+      let tYear = nowDate.getFullYear();
+      let tMonth = nowDate.getMonth();
+      let tDate = nowDate.getDate();
+      let now = new Date(tYear, tMonth, tDate).getTime();
+
+      // 指定月日の年を指定
+      let nYear = tYear;
+      let nMonth = 11 - 1;
+      let nDate = 3;
+      let nTarget = new Date(nYear, nMonth, nDate).getTime();
+
+      let diffDate = nTarget - now;
+      // 指定日までの日数 = 指定月日までのミリ秒 / ( 1000 * 60秒 * 60分 * 24時間 )
+      let date = Math.floor(diffDate / (1000 * 60 * 60 * 24));
+      CD.innerHTML = date;
+      //ここまで
+    </script>
+    <script type="text/javascript" src="./script.js" defer></script>
+  </body>
+</html>

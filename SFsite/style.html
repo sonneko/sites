@@ -1,0 +1,510 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+/*オズワルドフォント。シンプルでかっこいい。*/
+@font-face {
+  font-family: "oswald";
+  src: url("./assets/Oswald-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/*CSS変数*/
+:root {
+  --light: #fafafc;
+  --dark: #112244;
+  --shadow: #88888888;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--light);
+  background-image: url("https://sf24.glitch.me/assets/text.svg");
+  background-repeat: repeat;
+  background-size: 100%;
+  transition: background-color ease 1s;
+}
+/*リンク色、下線を消す*/
+a {
+  text-decoration: none;
+  color: #4444dd;
+}
+/*上のメニュー*/
+header {
+  margin: 0;
+  width: min(1000px, 100vw);
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+}
+#g-nav ul {
+  margin: 0;
+  padding: 10px;
+  text-align: right;
+  display: flex;
+  justify-content: right;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  float: right;
+}
+#g-nav li {
+  display: block;
+}
+#g-nav a {
+  position: relative;
+  display: block;
+  padding: 10px;
+  color: var(--light);
+  text-decoration: none;
+  display: block;
+  transition: all ease 0.3s;
+}
+#g-nav a:hover {
+  color: #ffdddd;
+}
+#g-nav a::after {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--light);
+  transform: scale(0, 1);
+  transform-origin: center top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
+  transition: transform 0.3s; /*変形の時間*/
+}
+#g-nav a:hover::after {
+  transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+}
+/*使わない*/
+header .hide {
+  transform: translateY(-60px);
+  opacity: 0.5;
+}
+/*メニューのSEIKOの文字*/
+#cc1 {
+  display: block;
+  position: fixed;
+  top: max(3px, calc(8px - 3vw));
+  left: max(20px, calc(50vw - 480px));
+  color: var(--dark);
+  font-size: min(36px, calc(4vw + 16px));
+  font-family: "oswald", sans-serif;
+  z-index: 100;
+  opacity: 1;
+  transition: color ease 0.3s;
+}
+/*メイン見出し*/
+h1.nohome {
+  margin: 0;
+  padding: 0px 15px;
+  border-radius: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: normal;
+  font-family: serif;
+  font-size: 3.6rem;
+  text-align: center;
+  box-shadow: 1px 1px 3px var(--shadow);
+  transform: translate(-50%, -50%) skew(-12deg);
+  background-color: var(--dark);
+  color: var(--light);
+  opacity: 0.85;
+}
+.h1Back {
+  text-align: center;
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: serif;
+  font-style: italic;
+  font-size: min(175px, 25vw);
+  color: var(--light);
+  -webkit-text-stroke: 1.25px var(--dark);
+  text-stroke: 1.25px var(--dark);
+  line-height: 1.3;
+  transform: scale(1, 1.2) translateX(max(-10px, -1.2vw));
+}
+.h1Contain {
+  margin: 80px auto 20px;
+  position: relative;
+  overflow: hidden;
+}
+#headerBlack {
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(-30deg, var(--dark) 52%, var(--light) 52%);
+  z-index: 15;
+  box-shadow: 0px 10px 20px var(--shadow);
+}
+
+/*メイン要素*/
+main > section {
+  margin: 60px auto;
+  width: min(1000px, calc(100vw - 40px));
+}
+.mother {
+  width: 36rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  background-image: url("https://sf24.glitch.me/assets/bg.jpeg");
+  background-position: center;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+}
+.mother span {
+  font-size: 10rem;
+  font-family: "oswald", sans-serif;
+}
+.container {
+  display: flex;
+}
+/*見出し*/
+.arrow h2 {
+  position: relative;
+  font-weight: normal;
+  margin: 20px auto;
+  padding-left: 10px;
+  font-size: 4rem;
+  font-family: "oswald", sans-serif;
+  min-width: 0;
+  width: fit-content;
+  color: var(--dark);
+}
+.arrow h2::after {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark);
+  transform: scale(0, 1);
+  transform-origin: center right;
+  transition: transform 0.3s;
+}
+.arrow h2:hover::after {
+  transform-origin: center left;
+  transform: scale(1, 1);
+}
+.arrow h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -6rem;
+  margin: 1.4rem 1.4rem 1rem 1rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-top: 0.4rem solid var(--dark);
+  border-right: 0.4rem solid var(--dark);
+  transform: rotate(45deg);
+}
+.container.light h2 {
+  color: var(--light);
+}
+.container.light h2::after {
+  background-color: var(--light);
+}
+.container.light h2::before {
+  border-top: 0.4rem solid var(--light);
+  border-right: 0.4rem solid var(--light);
+}
+/*お知らせ*/
+.news {
+  position: relative;
+  display: block;
+  width: min(calc(100% - 30px), 700px);
+  padding: 15px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: linear-gradient(-135deg, transparent 24px, var(--light) 0) top
+    right;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 4px var(--shadow));
+}
+.news:after {
+  position: absolute;
+  content: "";
+  right: 0px;
+  top: 0px;
+  border-width: 0 34px 34px 0;
+  border-style: solid;
+  border-color: #bbb transparent #bbb;
+  filter: drop-shadow(2px 2px 2px var(--shadow));
+}
+.news tbody,
+.news tfoot {
+  display: block;
+}
+.news tbody tr {
+  border-bottom: 1px solid var(--dark);
+  display: flex;
+  justify-content: space-between;
+}
+.news td {
+  width: calc(30% - 30px);
+  padding: 15px;
+}
+.news td:nth-child(2) {
+  width: 70%;
+}
+/*情報*/
+.infoflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.info {
+  text-align: center;
+  display: block;
+  margin: 15px 10px;
+  padding: 15px;
+  width: fit-content;
+  font-size: 3rem;
+  position: relative;
+  border-radius: 10px;
+  border: 10px solid #535353;
+  background-color: white;
+  transition: all ease 0.3s;
+  box-shadow: 5px 5px 10px var(--shadow);
+}
+.info:hover {
+  transform: scale(0.9);
+}
+.info::after {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 60px;
+  height: 30px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(124, 249, 249, 0.5) 0 5px,
+    transparent 5px 10px
+  );
+  border-left: 2px dashed rgba(0, 0, 0, 0.1);
+  border-right: 2px dashed rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 4px 32px;
+  color: #65513f;
+  transform: translateX(-50%) rotate(-5deg);
+  content: "";
+}
+/*説明*/
+.flexChild {
+  background-color: var(--light);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: inset 1px 1px 5px var(--shadow);
+}
+.message {
+  width: min(calc(100% - 30px), 700px);
+  margin: 0 auto;
+  padding: 40px 15px;
+}
+.message p {
+  line-height: 2.5;
+  display: inline;
+  padding: 0.2em;
+  border-bottom: 1px dashed gray;
+}
+.message > div {
+  display: block;
+  text-align: right;
+}
+/*写真の表示非表示*/
+.ap {
+  opacity: 0;
+}
+.cells {
+  width: 50%;
+  min-height: 200px;
+}
+.cells:nth-child(odd) {
+  text-align: center;
+}
+.cells:nth-child(even) {
+  margin-top: 60px;
+}
+.cellsImage {
+  border: 2px solid var(--light);
+  border-radius: 15px;
+  margin: 0px auto;
+  box-shadow: 5px 5px 20px var(--shadow);
+  transition: opacity ease 1s;
+}
+.light .flexChild {
+margin: 60px 0 0;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.light p {
+  line-height: 2;
+  clear: both;
+}
+/*1文字目を大きく*/
+.light p::first-letter {
+  font-size: 2em;
+  float: left;
+  padding-right: 5px;
+}
+/*フッター*/
+footer {
+  overflow: hidden;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  /*font-family: "oswald", sans-serif;*/
+  color: var(--light);
+  background-color: var(--dark);
+}
+#footerLink {
+  margin: 30px auto;
+  width: min(1000px, calc(100vw - 40px));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#footerLink a {
+  display: block;
+  padding: 15px;
+  color: #ddf;
+  text-decoration: underline;
+}
+#footerLink a::before {
+  content: "> ";
+}
+/*フッターの大きい文字*/
+#footerCoolLogo {
+  margin-top: 30px;
+  font-style: italic;
+  font-size: max(12vw, calc(9vw + 20px));
+  color: var(--dark);
+  -webkit-text-stroke: 0.7px var(--light);
+  text-stroke: 0.7px var(--light);
+  line-height: 1.3;
+  transform: scale(1.25, 1.5);
+}
+@media screen and (max-width: 700px) {
+  /*ヘッダー*/
+  #g-nav {
+    position: fixed;
+    z-index: 55;
+    top: -202px;
+    left: 0;
+    width: 100vw;
+    height: 200px;
+    background-color: #0b1f61;
+    transition: ease 0.4s;
+    overflow: scroll;
+    padding: 0;
+    border-bottom: 2px solid var(--light);
+  }
+  /*アクティブクラスがついたら位置を0に*/
+  #g-nav.panelactive {
+    height: min(600px, calc(60vh + 240px));
+  }
+  #g-nav ul {
+    padding-top: 240px;
+    display: block;
+    float: none;
+  }
+  #g-nav li {
+    display: list-item;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    transform: scale(0.5) translateY(100px);
+    transition: ease 0.4s;
+  }
+  #g-nav.panelactive li {
+    transform: scale(1) translateY(0px);
+  }
+  #g-nav li a {
+    border-bottom: 2px groove #0b1f61;
+    color: var(--light);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  /*ハンバーガーメニュー*/
+  #openbtn {
+    position: fixed;
+    z-index: 9999;
+    top: 5px;
+    right: 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+  }
+
+  /*×に変化*/
+  #openbtn span {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--light);
+    width: 45%;
+  }
+  #openbtn span:nth-of-type(1) {
+    top: 15px;
+  }
+
+  #openbtn span:nth-of-type(2) {
+    top: 23px;
+  }
+
+  #openbtn span:nth-of-type(3) {
+    top: 31px;
+  }
+  #openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+  }
+
+  #openbtn.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  #openbtn.active span:nth-of-type(3) {
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+  }
+  /*縦並び*/
+  .container {
+    display: block;
+  }
+  .cells {
+    width: 100%;
+  }
+}
