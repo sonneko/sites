@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>よくある質問 || 2024年大阪星光学院スクールフェア(SF)</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="2024年度大阪星光学院スクールフェア(SF)特設サイトです"
+    />
+    <!-- favicon/webclipicon -->
+    <link rel="icon" href="https://sf24.glitch.me/images/icon.ico" />
+    <link rel="icon" href="./images/icon512x512.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./images/icon192x192.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="apple-mobile-web-app-title" content="Seiko SF '24" />
+    <meta
+      name="application-name"
+      content="よくある質問 || 2024年大阪星光学院スクールフェア(SF)特設サイト"
+    />
+    <!-- ogp -->
+    <meta
+      property="og:site_name"
+      content="テーマ || 2024年大阪星光学院スクールフェア(SF)"
+    />
+    <meta property="og:url" content="https://sf24.glitch.me/faq" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="よくある質問 || 2024年大阪星光学院スクールフェア(SF)"
+    />
+    <meta
+      property="og:description"
+      content="'24年度大阪星光学院スクールフェア(SF)特設サイトです"
+    />
+    <meta property="og:image" content="../images/logo1200x630.jpg" />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="preload" as="font" href="./assets/Oswald-Regular.ttf" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      details {
+        background-color: #fcfafa;
+        border: 1px solid gray;
+        box-shadow: 1px 1px 10px var(--shadow);
+      }
+      details:last-child,
+      details:last-child summary {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      details:first-of-type,
+      details:first-of-type summary {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      summary,
+      .answerInner {
+        padding: 20px;
+      }
+      details[open] summary {
+        color: #725;
+      }
+      details summary::before {
+        content: "（＋）";
+        display: block;
+        text-align: center;
+        width: 5rem;
+        float: left;
+      }
+      details[open] summary::before {
+        content: "（－）";
+      }
+      summary {
+        /* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+        border-bottom: 1px solid gray;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      footer {
+        margin-top: 160px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="openbtn"><span></span><span></span><span></span></div>
+      <div id="g-nav">
+        <ul>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./info.html">INFO</a></li>
+          <li><a href="./booth.html">BOOTH</a></li>
+          <li><a href="./stage.html">STAGE</a></li>
+          <li><a href="./blog.html">BLOG</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </header>
+    <a href="./index.html"><div id="cc1">Seiko SF '24</div></a>
+    <div id="headerBlack"></div>
+    <main class="arrow">
+      <div class="h1Contain">
+        <div class="h1Back">FAQ</div>
+        <h1 class="nohome" style="font-size:2.6rem">よくある質問</h1>
+      </div>
+      <section>
+        <h2>
+          MONEY
+        </h2>
+        <details class="details">
+          <summary class="summary">しつもんしつもんしつもん？？？</summary>
+          <div class="answer">
+            <div class="answerInner">
+              <p>とにかくここに回答を書く。</p>
+            </div>
+          </div>
+        </details>
+        <details class="details">
+          <summary class="summary">しつもんしつもんしつもん？？？</summary>
+          <div class="answer">
+            <div class="answerInner">
+              <p>とにかくここに回答を書く。</p>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+    <footer></footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".details").forEach(function (el) {
+          const summary = el.querySelector(".summary");
+          const answer = el.querySelector(".answer");
+          summary.addEventListener("click", (event) => {
+            // デフォルトの挙動を無効化
+            event.preventDefault();
+            // detailsのopen属性を判定
+            if (el.getAttribute("open") !== null) {
+              // アコーディオンを閉じるときの処理
+              const closingAnim = answer.animate(
+                closingAnimation(answer),
+                animTiming
+              );
+
+              closingAnim.onfinish = () => {
+                // アニメーションの完了後にopen属性を取り除く
+                el.removeAttribute("open");
+              };
+            } else {
+              // open属性を付与
+              el.setAttribute("open", "true");
+              // アコーディオンを開くときの処理
+              const openingAnim = answer.animate(
+                openingAnimation(answer),
+                animTiming
+              );
+            }
+          });
+        });
+      });
+      // アニメーションの時間とイージング
+      const animTiming = {
+        duration: 300,
+        easing: "ease-in-out",
+      };
+      // アコーディオンを閉じるときのキーフレーム
+      const closingAnimation = (answer) => [
+        {
+          height: answer.offsetHeight + "px",
+          opacity: 1,
+        },
+        {
+          height: 0,
+          opacity: 0,
+        },
+      ];
+      // アコーディオンを開くときのキーフレーム
+      const openingAnimation = (answer) => [
+        {
+          height: 0,
+          opacity: 0,
+        },
+        {
+          height: answer.offsetHeight + "px",
+          opacity: 1,
+        },
+      ];
+    </script>
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
