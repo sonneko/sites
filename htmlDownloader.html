@@ -102,7 +102,9 @@ const applicationUrl = '';
 //または、GASに送信
 const getRequest = function (urlString) {
 	if(method === 'このデバイス') {
-		fetch(urlString).then(response => return response);
+		let date;
+		fetch(urlString).then(response => date = response);
+		return date;
 	}else if(method === 'OneDriveの共有フォルダ') {
 		const targetUrl = applicationUrl + '?url=' + urlString;
 		fetch(targetUrl);
@@ -153,13 +155,13 @@ function init() {
 		}
 		//保存
 		if(method === 'OneDriveの共有フォルダ') {
-			for(int i; i<=urlList.length; i++) {
+			for(let i; i<=urlList.length; i++) {
 				getRequest(urlList[i]);
 			}
 			downloadDate = undefined;
 		} else if (method === 'このデバイス') {
 			downloadDate = [];
-			for(int i; i<=urlList.length; i++) {
+			for(let i; i<=urlList.length; i++) {
 				downloadDate.push(getRequest(urlList[i]));
 			}
 		} else if (method === 'ロイロノートのフォルダ') {
