@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>URL Fetcher</title>
+  <title>Proxi System</title>
   <script>
     async function fetchUrlContent(event) {
       event.preventDefault();
@@ -11,13 +11,20 @@
       document.getElementById('result').innerHTML = result;
     }
   </script>
+  <style>
+    .cdffffdfdfdftitle{
+        background-color: #EEDCCA;
+        text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h1>URL Fetcher</h1>
+    <div class="cdffffdfdfdftitle">
+  <h1>Proxi System</h1>
   <form onsubmit="fetchUrlContent(event)">
     <input type="text" id="urlInput" placeholder="Enter URL" style="width: 300px;">
-    <button type="submit">Fetch</button>
+    <button type="submit">LOAD</button>
   </form>
-  <div id="result" style="margin-top: 20px;"></div>
+  <hr></div><div id="result" style="margin-top: 20px;"></div>
 </body>
 </html>
