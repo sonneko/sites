@@ -27,7 +27,11 @@
         html = htmlElement.value;
         locas = html.indexOf("<head>");
         locaf = html.indexOf("</head>");
-        outhtml = html.substr(0, locas - 1) + cssElement.value + html.substring(locaf + 7,html.length);
+        if (locas !== -1 && locaf !== -1) {
+            outhtml = html.substr(0, locas - 1) + cssElement.value + html.substring(locaf + 7,html.length);
+        } else {
+            outhtml = html;
+        }
         previewElement.innerHTML = outhtml;
         eval(jsElement.value);
     }
