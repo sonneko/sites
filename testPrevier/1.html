@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aoristos Official Website</title>
+<style>/* ベーススタイル */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #000;
+    background: #fff;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* ナビゲーションバー */
+#navbar {
+    background: #fff;
+    color: #000;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#navbar ul li {
+    margin-left: 20px;
+}
+
+#navbar ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#navbar ul li a:hover {
+    color: #47AB42;
+}
+
+/* ヒーローセクション */
+#home {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+    background: #47AB42;
+}
+
+.background-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero-title {
+    margin-top: 20%;
+    font-size: 4rem;
+    color: #fff;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #fff;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* セクションスタイル */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* カードスタイル */
+.cards, .member-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card, .member-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover, .member-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.member-card img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* タイムラインスタイル */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-item {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* フォームスタイル */
+form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin: 15px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #47AB42;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #47AB42;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: #388E3C;
+}
+/* アニメーションの基本スタイル */
+.card, .timeline-item, .member-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <nav id="navbar">
+        <div class="container">
+            <h1 class="logo"><a href="#home">Aoristos</a></h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#members">Members</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section id="home">
+        <div class="hero-container">
+            <video autoplay loop muted playsinline class="background-video">
+                <source src="background.mp4" type="video/mp4">
+            </video>
+            <h1 class="hero-title">Welcome to Aoristos</h1>
+            <p class="hero-subtitle">未来を創造する若者の力</p>
+            <a href="#about" class="scroll-down"><i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Aoristosについて -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>ミッション</h3>
+                    <p>私たちの目標は…</p>
+                </div>
+                <div class="card">
+                    <h3>ビジョン</h3>
+                    <p>私たちのビジョンは…</p>
+                </div>
+                <div class="card">
+                    <h3>価値観</h3>
+                    <p>私たちの価値観は…</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 活動内容と実績 -->
+    <section id="activities">
+        <div class="container">
+            <h2>Our Activities</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>2023</h3>
+                    <p>活動内容の説明…</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024</h3>
+                    <p>活動内容の説明…</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- メンバー紹介 -->
+    <section id="members">
+        <div class="container">
+            <h2>Our Members</h2>
+            <div class="member-cards">
+                <div class="member-card">
+                    <img src="member1.jpg" alt="Member 1">
+                    <h3>メンバー1</h3>
+                    <p>役割…</p>
+                </div>
+                <div class="member-card">
+                    <img src="member2.jpg" alt="Member 2">
+                    <h3>メンバー2</h3>
+                    <p>役割…</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 連絡先 -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="submit_form.php" method="post">
+                <div class="form-group">
+                    <label for="name">名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">メッセージ</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">送信</button>
+            </form>
+        </div>
+    </section>
+
+<script>// ナビゲーションバーのハイライト
+document.querySelectorAll('#navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// アニメーションのためのIntersection Observer API
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    });
+
+    document.querySelectorAll('.card, .timeline-item, .member-card').forEach(element => {
+        observer.observe(element);
+    });
+});
+</script>
+</body>
+</html>
