@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テスト用ページ</title>
+</head>
+<body>
+    <label>html:<input type="text" id="html" /></label>
+    <label>css:<input type="text" id="css" /></label>
+    <label>js:<input type="text" id="js" /></label>
+    <button id="loadButton">更新</button>
+    <div class="preview"></div>
+</body>
+<script>
+    const htmlElement = document.getElementById("html");
+    const cssElement = document.getElementById("css");
+    const jsElement = document.getElementById("js");
+
+    const previewElement = documemt.getElementById("preview");
+
+    const loadButtonElement = document.getElementById("loadButton");
+
+
+    let html,locas,locaf,outhtml;
+    function load() {
+        html = htmlElement.value;
+        locas = html.indexOf("<head>");
+        locaf = html.indexOf("</head>");
+        outhtml = html.substr(0, locas - 1) + cssElement.value + html.substring(locaf + 7,html.length);
+        previewElement.innerHTML = outhtml;
+        eval(jsElement.value);
+    }
+
+    loadButtonElement.onclick = load;
+
+
+</script>
+</html>
