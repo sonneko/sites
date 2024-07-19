@@ -3,8 +3,49 @@
   
     <meta charset="utf-8">
     <title>Team Aoristos公式サイト</title>
+<script>
+window.onload = function() {
+  const spinner = document.getElementById('loading');
+  spinner.classList.add('loaded');
+}
+</script>
 <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
 <style>
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: rgb(77,177,66);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.loaded{
+  opacity: 0;
+  visibility: hidden;
+}
+.spinner {
+  width: 100px;
+  height: 100px;
+  margin: 200px auto;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+body{
+  padding: 0px;
+  margin: 0px;
+}
 margin{
     margin: 0px;
     padding: 0px;
@@ -14,9 +55,12 @@ margin{
   width: 100%;
   text-align: right;
   background-color: rgba(77,177,66,0.7);
+  box-shadow: 0px 3px 5px 0px rgba(59, 58, 58, 0.45);
 }
 .constant nav a{
-  margin: 10px 40px;
+  margin: 0px 0px;
+  padding: 0px 40px;
+  border-left: 1px rgba(0,0,0,0.7) solid;
   font-size: 20px;
   text-decoration: none;
   color: rgba(0,0,0,0.7);
@@ -54,7 +98,9 @@ margin{
 }
 .catchcopy{
   text-align: center;
-  margin: 200px 0px;
+  margin: 200px 20px;
+  border: solid black 1px;
+  padding: 10px;
 }
 .catchcopy h1{
     font-style: italic;
@@ -153,10 +199,12 @@ margin{
 }
 </style>
   
-  
+ <body> 
+
+<div id="loadin"><div class="spinner"></div></div>
     <div class="constant">
       <nav>
-        <img src="/">
+        <img src="https://sonneko.github.io/sites/testPrevier/smallIcon.jpeg" width="36px" height="36px">
         <h1>Team Aoristos</h1>
         <a href="/blog">ブログ</a>
         <a href="/intro">チームについて</a>
@@ -225,4 +273,5 @@ margin{
 <div class="mailContact"></div>
 <img src="">
 </div>
+</body></html>
   
