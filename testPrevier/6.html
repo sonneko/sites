@@ -1,516 +1,301 @@
 
 <!DOCTYPE html><html><head>
-
-  
-
-    <meta charset="utf-8">
-
-    <title>Team Aoristos公式サイト</title>
+  <meta charset="utf-8">
+  <title>Team Aoristos公式サイト</title>
 
 <script>
-
 window.onload = function() {
-
   const spinner = document.getElementById('loading');
-
   spinner.classList.add('loaded');
-
 }
-
 </script>
-
 <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
 
 <style>
-
 #loading {
-
   width: 100vw;
-
   height: 100vh;
-
   transition: all 1.5s;
-
   background-color: rgb(77,177,66);
-
   position: fixed;
-
   top: 0;
-
   left: 0;
-
   z-index: 9999;
 }
 
 .loaded{
-
   opacity: 0;
 }
+
 body{
-
   padding: 0px;
-
   margin: 0px;
-
 }
 
 margin{
-
     margin: 0px;
-
     padding: 0px;
-
 }
 
 .constant{
-
   position: fixed;margin-top: -30px;
   width: 100%;
-
   text-align: right;
-
   background-color: rgba(77,177,66,0.7);
-
   box-shadow: 0px 3px 5px 0px rgba(59, 58, 58, 0.45);
-
 }
 
 .constant nav a{
-
   margin: 0px 0px;
-
   padding: 0px 40px;
-
   border-left: 1px rgba(0,0,0,0.7) solid;
-
   font-size: 20px;
-
   text-decoration: none;
-
   color: rgba(0,0,0,0.7);
-
   font-family: 'Alegreya Sans SC', sans-serif;
-
 }
 
 .constant nav a:any-link:hover{
-
   color: rgba(0,0,0,0.2);
-
 }
 
 .constant nav h1{
-
   float: left;
-
   margin: 0px 40px;
-
   font-family: 'Alegreya Sans SC', sans-serif;
-
   font-size: 23px;
-
   color: rgba(0,0,0,0.7);
-
 }
 
 .constant nav img{
-
   float: left;
-
   padding: 0px 10px;
-
   /*width: ??;
-
   height: ??;*/
-
 }
 
 .title{
-
   text-align: center;
-
   font-family: 'Alegreya Sans SC', sans-serif;
-
 }
 
 .title h1{
-
   font-size: 50px;
-
   margin: 0px;
-
   padding: 0px;
   color: rgba(0,0,0,0.7);
-
 }
 
 .title p{
-
   margin: 30px 0px 0px 0px;
-
   font-size: 20px;
-
   color: rgba(0,0,0,0.5);
-
 }
 
 .title img{
   padding: 0px;
   margin: 0px;
 }
+
 .catchcopy{
-
   text-align: center;
-
   margin: 200px 20px;
-
   border: solid black 1px;
-
   padding: 10px;
   box-shadow: 0px 3px 5px 0px rgba(59, 58, 58, 0.45);
 }
 
 .catchcopy h1{
-
-    font-style: italic;
-
-   font-family: 'Alegreya Sans SC', sans-serif;
-
+  font-style: italic;
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 .card{
-
   margin: 10px 20px;
-
   padding: 20px 50px;
-
 }
 
 .card img{
-
   width: 0px;
-
   height: 0px;
-
 }
 
 .card h1{
-
   padding: 0px;
-
   margin: 0px;
-
 }
 
 .card h2{
-
   font-size: 90px;
-
   color: rgba(0,0,0,0.3);
-
   margin: -110px 10px;
-
   padding: 0px;
-
   margin-bottom: -40px
-
 }
 
 .card p{
-
-  margin: 30px 0px;
-
+  margin: 30px 0px 0px 0px;
 }
 
 /*波波*/
 
 .wabe {
-
     position: relative;
-
     padding: 1rem;
-
     margin: 50px 30px;
-
     font-size: 24px;
-
     font-weight: bold;
-
     text-align: left;
-
 }
-
 
 
 .wabe::before,
-
 .wabe::after {
-
     position: absolute;
-
     width: 50px;
-
     height: 30px;
-
     content: '';
-
 }
-
-
 
 .wabe::before {
-
     border-left: dotted 3px;
-
     border-bottom: dotted 3px;
-
     top: 0;
-
     left: 0;
-
 }
 
-
-
 .wabe::after {
-
     border-right: dotted 3px;
-
     border-bottom: dotted 3px;
-
     bottom: 0;
-
     right: 0;
-
 }
 
 .wabE {
-
     position: relative;
-
     padding: 1rem;
-
     font-size: 24px;
-
     font-weight: bold;
-
     text-align: center;
-
-   margin: 0px 30px
+    margin: 0px 30px
 }
-
-
-
 .wabE::before,
-
 .wabE::after {
-
     position: absolute;
-
     width: 50px;
-
     height: 30px;
-
     content: '';
-
 }
-
-
 
 .wabE::before {
-
     border-left: dotted 3px;
-
     border-top: dotted 3px;
-
     top: 0;
-
     left: 0;
-
 }
 
-
-
 .wabE::after {
-
     border-right: dotted 3px;
-
     border-top: dotted 3px;
-
     bottom: 0;
-
     right: 0;
-
 }
 
 /*波波*/
-
 .riabizu{
-
   background-color: rgba(256,0,0,0.1);
-
   width: 100%;
-
   text-align: center;
-
 }
 
 .riabizu h1{
-
   font-size: 20px;
-
 }
-
 </style>
 
   
 
- <body> 
+<body> 
 
 <div id="loading"></div>
-
     <div class="constant">
-
       <nav>
-
         <img src="https://sonneko.github.io/sites/testPrevier/smallIcon.jpeg" width="36px" height="36px">
-
         <h1>Team Aoristos</h1>
-
         <a href="/blog">ブログ</a>
-
         <a href="/intro">チームについて</a>
-
         <a href="/index">ホーム</a>
-
-        <div class="hamburger"></div>
-
+        <div class="hamburger">
+          <ul>
+            <li><a href="/index">ホーム</a></li>
+            <li><a href="/blog">ブログ</a></li>
+            <li><a href="/member">メンバー</a></li>
+            <li><a href="/contest">コンテスト</a></li>
+            <li><a href="/comment">コメント</a></li>
+            <li><a href="/"></a></li>
+          </ul>
+        </div>
       </nav>
-
     </div>
-
 <div class="title">
-
-<p>高校生による自学団体</p>
-
-<h1>Team Aoristos</h1>
-
-<img src="https://sonneko.github.io/sites/testPrevier/smallIcon.jpeg" width="80%">
+  <p>高校生による自学団体</p>
+  <h1>Team Aoristos</h1>
+  <img src="https://sonneko.github.io/sites/testPrevier/smallIcon.jpeg" width="80%">
 </div>
-
 <div class="catchcopy">
-
-<h1>VERITAS LIBERABIT VOS</h1>
-
-<p>日本語訳は、「真実はあなたたちを自由にする」。<br>ヨハネ8章の32節にある言葉です。</p>
-
+  <h1>VERITAS LIBERABIT VOS</h1>
+  <p>日本語訳は、「真実はあなたたちを自由にする」。<br>ヨハネ8章の32節にある言葉です。</p>
 </div>
-
 <div class="cards">
-
 <div class="wabE"></div>
-
 <div class="card about">
-
-<h1>About</h1>
-
-<h2>About</h2>
-
+  <h1>About</h1>
+  <h2>About</h2>
 <p><b>Team Aoristos</b>とは、高校一年生のみで構成される自学団体です。<br>主に、<b>学術系オリンピックなど</b>に挑戦しています。</p>
-
 <p>また、他にも技術分野が好きなメンバーは実際に電子工作などをしたり、<br>化学が好きなメンバーは実際に勉強をしたり、<br>かなり、広い範囲での"<b>勉強</b>"を行っています。</p>
-
 </div>
-
 <div class="wabe"></div>
-
 <div class="wabE"></div>
-
 <div class="card activity">
-
-<h1>Activities</h1>
-
-<h2>Activities</h2>
-
-<p>たくさんの学術系の大会に出場しています。<br>参加している大会について<a href="">詳しく</a></p>
-
-<p>情報技術班では、Web開発について学んだり、構造力学の勉強をしています。<br>また、生物化学班では、実際に実験を行なったり、最新の論文をみんなで読んだりしています。<br><a href="">班ごとの活動について詳しく</a></p>
-
-<img src="">
-
+  <h1>Activities</h1>
+  <h2>Activities</h2>
+  <p>たくさんの学術系の大会に出場しています。<br>参加している大会について<a href="">詳しく</a></p>
+  <p>情報技術班では、Web開発について学んだり、構造力学の勉強をしています。<br>また、生物化学班では、実際に実験を行なったり、最新の論文をみんなで読んだりしています。<br><a href="">班ごとの活動について詳しく</a></p>
+  <img src="">
 </div>
-
 <div class="wabe"></div>
-
 <div class="wabE"></div>
-
 <div class="card group">
-
-<h1>Group</h1>
-
-<h2>Group</h2>
-
-<p>メンバーそれぞれがさまざまな分野の勉強をしているので、<br>分野による班分けは必須です。</p>
-
-<p><a href="">情報技術班</a>・<a href="">数学物理班</a>・<a href="">化学生物班</a>・<a href="">地理地学班</a>・<a href="">言語哲学班</a>があります。</p>
-
-<p><a href="">班について詳しく</a></p>
-
+  <h1>Group</h1>
+  <h2>Group</h2>
+  <p>メンバーそれぞれがさまざまな分野の勉強をしているので、<br>分野による班分けは必須です。</p>
+  <p><a href="">情報技術班</a>・<a href="">数学物理班</a>・<a href="">化学生物班</a>・<a href="">地理地学班</a>・<a href="">言語哲学班</a>があります。</p>
+  <p><a href="">班について詳しく</a></p>
 </div>
-
 <div class="wabe"></div>
-
 <div class="wabE"></div>
-
 <div class="card member">
-
-<h1>Members</h1>
-
-<h2>Members</h2>
-
-<p>チームには、個性豊かなメンバーが14人います。</p>
-
-<p>どうでもいいことに熱中できるような人たちばかりです。<br>みんな、自分自身の好きな分野に誇りを持っています。<br><a href="">メンバーについて詳しく</a></p>
-
+  <h1>Members</h1>
+  <h2>Members</h2>
+  <p>チームには、個性豊かなメンバーが14人います。</p>
+  <p>どうでもいいことに熱中できるような人たちばかりです。<br>みんな、自分自身の好きな分野に誇りを持っています。<br><a href="">メンバーについて詳しく</a></p>
 </div>
-
 <div class="wabe"></div>
-
 </div>
-
 <div class="article">
-
-<div class="article-card"></div>
-
-<div class="article-card"></div>
-
-<div class="article-card"></div>
-
-<div class="article-card"></div>
-
+  <div class="article-card"></div>
+  <div class="article-card"></div>
+  <div class="article-card"></div>
+  <div class="article-card"></div>
 </div>
-
 <div class="riabizu">
-
 <h1>リアビズ特設ページはこちら！！</h1>
-
 </div>
-
 <div clas="cintact">
-
-<h1>Contact</h1>
-
-<p>ご質問等あれば、遠慮なくこちらからお願いいたします。</p>
-
-<div class="xContact"></div>
-
-<div class="mailContact"></div>
-
-<img src="">
-
+  <h1>Contact</h1>
+  <p>ご質問等あれば、遠慮なくこちらからお願いいたします。</p>
+  <div class="xContact"></div>
+  <div class="mailContact"></div>
+  <img src="">
 </div>
-
 </body></html>
-
-  
-
