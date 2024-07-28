@@ -1,0 +1,196 @@
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300" rel="stylesheet" />
+<link href="style.css" rel="stylesheet" />
+
+
+<div>
+    <div id="particles-js"></div>
+
+    <div class="constant">
+            <nav>
+                <img src="https://sonneko.github.io/sites/testPrevier/smallIcon.jpeg" width="36px" height="36px">
+                <h1>Team Aoristos</h1>
+                <div class="hamburger">
+                    <ul>
+                        <div class="openbtn"><span></span><span></span><span></span></div>
+                        <nav id="g-nav">
+                            <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+                                <ul>
+                                    <li><a href="#">Top</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Service</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </ul>
+                </div>
+                <a href="/blog" class="last">ブログ</a>
+                <a href="/intro">チームについて</a>
+                <a href="/index">ホーム</a>
+            </nav>
+        </div>
+        <div id="wrapper">
+        <div class="title">
+            <p>高校生による自学団体</p>
+            <h1>Team Aoristos</h1>
+            <img src="https://sonneko.github.io/sites/testPrevier/smallIcon.jpeg" width="80%">
+        </div>
+        <div class="catchcopy">
+            <h1>VERITAS LIBERABIT VOS</h1>
+            <p>日本語訳は、「真実はあなたたちを自由にする」。<br>ヨハネ8章の32節にある言葉です。</p>
+        </div>
+        <div class="cards">
+
+            <div class="card about">
+                <h1>About</h1>
+                <h2>About</h2>
+                <p><b>Team Aoristos</b>とは、高校一年生のみで構成される自学団体です。<br>主に、<b>学術系オリンピックなど</b>に挑戦しています。</p>
+                <p>また、他にも技術分野が好きなメンバーは実際に電子工作などをしたり、<br>化学が好きなメンバーは実際に勉強をしたり、<br>かなり、広い範囲での"<b>勉強</b>"を行っています。</p>
+            </div>
+
+
+            <div class="card activity">
+                <h1>Activities</h1>
+                <h2>Activities</h2>
+                <p>たくさんの学術系の大会に出場しています。<br>参加している大会について</p>
+                <a href="" class="float">→詳しく</a>
+                <p>情報技術班では、Web開発について学んだり、構造力学の勉強をしています。<br>また、生物化学班では、実際に実験を行なったり、最新の論文をみんなで読んだりしています。<br></p>
+                <a href="" class="float">→班ごとの活動について詳しく</a>
+                <img src="">
+            </div>
+
+
+            <div class="card group">
+                <h1>Group</h1>
+                <h2>Group</h2>
+                <p>メンバーそれぞれがさまざまな分野の勉強をしているので、<br>分野による班分けは必須です。</p>
+                <div class="groupLink"><a href="">情報技術班</a><a href="">数学物理班</a><a href="">化学生物班</a><br><a
+                        href="">地理地学班</a><a href="">言語哲学班</a></div>
+                <a href="" class="float">→班について詳しく</a>
+            </div>
+
+
+            <div class="card member">
+                <h1>Members</h1>
+                <h2>Members</h2>
+                <p>チームには、個性豊かなメンバーが14人います。</p>
+                <p>どうでもいいことに熱中できるような人たちばかりです。<br>みんな、自分自身の好きな分野に誇りを持っています。</p>
+                <a href="" class="float">→メンバーについて詳しく</a>
+            </div>
+
+        </div>
+        <div class="article">
+            <div class="article-card"></div>
+            <div class="article-card"></div>
+            <div class="article-card"></div>
+            <div class="article-card"></div>
+        </div>
+
+        <div clas="cintact">
+            <h1>Contact</h1>
+            <p>ご質問等あれば、遠慮なくこちらからお願いいたします。</p>
+            <div class="xContact"></div>
+            <div class="mailContact"></div>
+            <img src="">
+        </div></div>
+    
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--自作のJS-->
+    <script>
+        $(".openbtn").click(function () {//ボタンがクリックされたら
+            $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+            $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+        });
+
+        $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+            $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+            $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+        });
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 50,//この数値を変更すると幾何学模様の数が増減できる
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#000000"//色
+                },
+                "shape": {
+                    "type": "polygon",//形状はpolygonを指定
+                    "stroke": {
+                        "width": 0,
+                    },
+                    "polygon": {
+                        "nb_sides": 3//多角形の角の数
+                    },
+                    "image": {
+                        "width": 190,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.664994832269074,
+                    "random": false,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2.2722661797524872,
+                        "opacity_min": 0.08115236356258881,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#000000",
+                    "opacity": 0.6,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,//この数値を小さくするとゆっくりな動きになる
+                    "direction": "none",//方向指定なし
+                    "random": false,//動きはランダムにしない
+                    "straight": false,//動きをとどめない
+                    "out_mode": "out",//画面の外に出るように描写
+                    "bounce": false,//跳ね返りなし
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 961.4383117143238
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": false
+                    },
+                    "resize": true
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+
+</html>
