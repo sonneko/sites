@@ -48,18 +48,18 @@
         </nav>
     </div>
     <div id="wrapper">
-        <div class="title">
+        <div class="title fadeUpTrigger">
             <p>高校生による自学団体</p>
             <h1>Team Aoristos</h1>
             <img src="icon.svg" width="80%" alt="icon" />
         </div>
-        <div class="catchcopy">
+        <div class="catchcopy fadeUpTrigger">
             <h1>VERITAS LIBERABIT VOS</h1>
             <p>「真理はあなたたちを自由にする」<br>新約聖書新共同訳・ヨハネによる福音書8章32節</p>
         </div>
         <div class="cards">
 
-            <div class="card about">
+            <div class="card about fadeUpTrigger">
                 <img src="wave.svg" alt="wave " class="wave before" />
                 <h1>About</h1>
                 <h2>About</h2>
@@ -71,7 +71,7 @@
 
 
 
-            <div class="card activity">
+            <div class="card activity fadeUpTrigger">
                 <img src="wave.svg" alt="wave " class="wave before" />
                 <h1>Activities</h1>
                 <h2>Activities</h2>
@@ -84,7 +84,7 @@
 
 
 
-            <div class="card group">
+            <div class="card group fadeUpTrigger">
                 <img src="wave.svg" alt="wave " class="wave before" />
                 <h1>Group</h1>
                 <h2>Group</h2>
@@ -97,7 +97,7 @@
 
 
 
-            <div class="card member">
+            <div class="card member fadeUpTrigger">
                 <img src="wave.svg" alt="wave " class="wave before" />
                 <h1>Members</h1>
                 <h2>Members</h2>
@@ -131,6 +131,49 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!--自作のJS-->
     <script>
+        // 動きのきっかけとなるアニメーションの名前を定義
+function fadeAnime(){
+
+//ふわっと動くきっかけのクラス名と動きのクラス名の設定
+$('.fadeUpTrigger').each(function(){ //fadeInUpTriggerというクラス名が
+　　var elemPos = $(this).offset().top-50; //要素より、50px上の
+　　var scroll = $(window).scrollTop();
+　　var windowHeight = $(window).height();
+　　if (scroll >= elemPos - windowHeight){
+　　$(this).addClass('fadeUp');
+　　// 画面内に入ったらfadeInというクラス名を追記
+　　}else{
+　　　$(this).removeClass('fadeUp');
+　　// 画面外に出たらfadeInというクラス名を外す
+　　}
+　　});
+
+//関数でまとめることでこの後に違う動きを追加することが出来ます
+$('.fadeDownTrigger').each(function(){ //fadeInDownTriggerというクラス名が
+　　var elemPos = $(this).offset().top-50; //要素より、50px上の
+　　var scroll = $(window).scrollTop();
+　　var windowHeight = $(window).height();
+　　if (scroll >= elemPos - windowHeight){
+　　$(this).addClass('fadeDown');
+　　// 画面内に入ったらfadeDownというクラス名を追記
+　　}else{
+　　　$(this).removeClass('fadeDown');
+　　// 画面外に出たらfadeDownというクラス名を外す
+　　}
+　　});
+
+
+}//ここまでふわっと動くきっかけのクラス名と動きのクラス名の設定
+
+// 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function (){
+    fadeAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+// 画面が読み込まれたらすぐに動かしたい場合の記述
+  $(window).on('load', function(){
+    fadeAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
         $(".openbtn").click(function () {//ボタンがクリックされたら
             $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
             $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
