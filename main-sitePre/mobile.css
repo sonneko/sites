@@ -154,7 +154,7 @@ body {
 #g-nav-list a {
     margin: 6px 0px;
     left: 40%;
-    font-size: 50px;
+    font-size: 35px;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.7);
     font-family: 'Alegreya Sans SC', sans-serif;
@@ -172,6 +172,11 @@ body {
 
 #g-nav {
     text-align: center;
+}
+
+.g-nav-listUl{
+    padding-left: 0;
+    padding-top: 40px;
 }
 
 .title {
