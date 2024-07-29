@@ -156,6 +156,7 @@
       left: 40%;
       font-size: 50px;
       text-decoration: none;
+      text-decoration: underline solid rgba(0, 0, 0, 0.7);
       color: rgba(0, 0, 0, 0.7);
       font-family: 'Alegreya Sans SC', sans-serif;
       padding: 30px;
@@ -196,6 +197,7 @@
   .title img {
       padding: 0px;
       margin: -200px;
+      width: 80%;
   }
 
   .catchcopy {
@@ -365,4 +367,7 @@
   .mailBotton:active{
     background-color: #B46A2E;
     box-shadow: inset 3px 3px 2px 1px rgba(57,57,57,0.23);
+  }
+  .cards{
+    text-align: center;
   }
