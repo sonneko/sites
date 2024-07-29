@@ -162,8 +162,8 @@
       padding: 30px;
   }
 
-  #g-nav-list a:hover{
-    color:rgba(0, 0, 0, 0.4);
+  #g-nav-list a:hover {
+      color: rgba(0, 0, 0, 0.4);
   }
 
   #g-nav-list p {
@@ -196,11 +196,10 @@
 
   .title img {
       padding: 0px;
-      margin: -200px;
+      margin: -250px;
       width: 80%;
   }
 
-  
   .catchcopy {
       text-align: center;
       font-size: 30px;
@@ -344,31 +343,32 @@
       width: 100%;
   }
 
-  .xBooton{
-    background-color: #d38b51;
-    width: 60px;
-    height: 30px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 2px 1px rgba(57,58,58,0.23);
+  .xBooton {
+      background-color: #d38b51;
+      width: 60px;
+      height: 30px;
+      border-radius: 5px;
+      box-shadow: 3px 3px 2px 1px rgba(57, 58, 58, 0.23);
   }
 
-  .mailBotton{
-    background-color: #d38b51;
-    width: 60px;
-    height: 30px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 2px 1px rgba(57,57,57,0.23);
+  .mailBotton {
+      background-color: #d38b51;
+      width: 60px;
+      height: 30px;
+      border-radius: 5px;
+      box-shadow: 3px 3px 2px 1px rgba(57, 57, 57, 0.23);
   }
 
-  .xBotton:active{
-    background-color: #B46A2E;
-    box-shadow: inset 3px 3px 2px 1px rgba(57,57,57,0.23);
+  .xBotton:active {
+      background-color: #B46A2E;
+      box-shadow: inset 3px 3px 2px 1px rgba(57, 57, 57, 0.23);
   }
 
-  .mailBotton:active{
-    background-color: #B46A2E;
-    box-shadow: inset 3px 3px 2px 1px rgba(57,57,57,0.23);
+  .mailBotton:active {
+      background-color: #B46A2E;
+      box-shadow: inset 3px 3px 2px 1px rgba(57, 57, 57, 0.23);
   }
-  .cards{
-    text-align: center;
+
+  .cards {
+      text-align: center;
   }
