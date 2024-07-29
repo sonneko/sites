@@ -241,7 +241,7 @@
       border: 2px solid #000000ab;
       font-size: 25px;
       border-radius: 10px;
-      background: #DD9BC2;
+      background-color: #DD9BC2;
       text-decoration: none;
       color: #000000;
       padding: 20px 30px;
@@ -255,7 +255,7 @@
 
   .card a:hover {
       color: #000000;
-      background: #C669A0;
+      background-color: #C669A0;
       box-shadow: inset 3px 3px 2px 1px rgba(57, 57, 57, 0.23);
   }
 
