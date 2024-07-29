@@ -132,7 +132,8 @@
   .constant nav h1 {
       float: left;
       margin: 0px 40px;
-      padding-top: 6px;
+      padding-top: 8px;
+      padding-bottom: 8px;
       font-family: 'Alegreya Sans SC', sans-serif;
       font-size: 23px;
       color: rgba(0, 0, 0, 0.7);
@@ -199,6 +200,7 @@
       width: 80%;
   }
 
+  
   .catchcopy {
       text-align: center;
       font-size: 30px;
