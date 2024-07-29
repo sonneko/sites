@@ -161,6 +161,10 @@
       padding: 30px;
   }
 
+  #g-nav-list a:hover{
+    color:rgba(0, 0, 0, 0.4);
+  }
+
   #g-nav-list p {
       padding: 0px;
       margin: 2px 0px;
