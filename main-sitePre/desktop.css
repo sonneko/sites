@@ -332,6 +332,7 @@
   .waveF {
       position: relative;
       height: 200px;
+      width: 100vw;
       /*何も表示されない場合は各波の親要素に高さを持たせましょう。*/
   }
 
