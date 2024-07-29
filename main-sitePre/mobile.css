@@ -392,3 +392,61 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+
+  
+.xContact, .mailContact {
+    margin: 50px 70px;
+}
+
+.xBotton, .mailBotton {
+    padding: 10px 50px;
+    text-align: center;
+    font-size: 1em;
+    color: #fff;
+    background-color: #1da1f2; /* Twitter/X blue */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.xBotton:hover, .mailBotton:hover {
+    background-color: #0a85d9; /* Darker shade for hover effect */
+}
+
+
+.sitemap a {
+    margin: 6px 0px;
+    left: 40%;
+    font-size: 30px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Alegreya Sans SC', sans-serif;
+    padding: 30px;
+}
+
+.sitemap a:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.sitemap p {
+    padding: 0px;
+    margin: 2px 0px;
+}
+
+.sitemap h1{
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.sitemap{
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.sitemap img{
+    margin-top: 30px;
+    width: 90vw;
+}
