@@ -51,7 +51,7 @@ $("#g-nav a").click(function () {//ナビゲーションのリンクがクリッ
     $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
 
-if(window.location.pathname === "/sites/main-sitePre/") {
+if(window.location.pathname === "/") {
 particlesJS("particles-js", {
     "particles": {
         "number": {
