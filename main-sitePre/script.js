@@ -50,6 +50,8 @@ $("#g-nav a").click(function () {//ナビゲーションのリンクがクリッ
     $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
     $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
+
+if(window.location.pathname === "/") {
 particlesJS("particles-js", {
     "particles": {
         "number": {
@@ -131,7 +133,8 @@ particlesJS("particles-js", {
         }
     },
     "retina_detect": true
-});
+});}
+
 var unit = 100,
     canvasList, // キャンバスの配列
     info = {}, // 全キャンバス共通の描画情報

@@ -168,7 +168,7 @@
 
   #g-nav-list p {
       padding: 0px;
-      margin: 2px 0px;
+      margin: -3px 0px;
   }
 
   #g-nav {
@@ -341,7 +341,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 100%;
+      width: 100vw;
   }
 
   .xBooton {
