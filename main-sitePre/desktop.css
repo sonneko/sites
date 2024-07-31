@@ -75,9 +75,10 @@
 
   /*ハンバーガーメニュー*/
 
-  body {
+  body,html{
       padding: 0px;
       margin: 0px;
+      overflow-x: hidden;
   }
 
   .constant {
@@ -159,7 +160,6 @@
       text-decoration: none;
       color: rgba(0, 0, 0, 0.7);
       font-family: 'Alegreya Sans SC', sans-serif;
-      padding: 30px;
   }
 
   #g-nav-list a:hover {
@@ -435,7 +435,6 @@
       text-decoration: none;
       color: rgba(0, 0, 0, 0.7);
       font-family: 'Alegreya Sans SC', sans-serif;
-      padding: 30px;
   }
 
   .sitemap a:hover {
