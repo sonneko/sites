@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div id="controll">
+    <div id="controll" style="text-align: center;">
         <div style="text-align: center;">
             <input id="input" value="https://" autofocus style="width: 80vw;font-size: 30px;">
         </div>
@@ -19,6 +19,7 @@
         <div onclick="init()"
             style="z-index: -1;position: absolute;bottom: 0;width: 100vw;height: 50vh;left: 0;background-color: rgb(157, 157, 157);">
         </div>
+        <a id="anker" style="position: absolute;left: 45vw;top: 45vh;" href="links.html?">リンク集へ→</a>
     </div>
     <iframe id="iframe" src="./"
         style="position: absolute;width: 100vw;height: 100vh;z-index: -100;top: 0;left: 0;"></iframe>
@@ -27,16 +28,34 @@
         style="z-index: 200;opacity: 0;position: absolute;right: 1vw;bottom: 1vw;width: 50px;height: 50px;background-color: black;color: white;font-size: 30px;text-align: center;padding-top: 5px;">
         ←</div>
     <script>
+        const nowUrl = window.location.href;
+        try {
+            const params = nowUrl.split("?")[1].split("=");
+            const paramData = params[1];
+            input.value = paramData;
+        } catch {
+
+        }
         const d = document.getElementById("input");
         const frame = document.getElementById("iframe");
         const back = document.getElementById("back");
         const controll = document.getElementById("controll");
+        const anker = document.getElementById("anker");
+
+        let list = [];
+        d.addEventListener("change", () => {
+            url = d.value;
+            if (url !== "https://") {
+                list.push(url);
+                anker.href += "+" + url;
+            }
+        })
         function init() {
             const url = d.value;
             try {
                 window.location = url;
             } catch {
-                alert(url + "には飛べませんんー")
+                window.location = encodeURI("https://www.google.com/search?q=" + url);
             }
         }
         function ini() {
@@ -47,7 +66,10 @@
                 back.style.opacity = 1;
                 controll.style.opacity = 0;
             } catch {
-                alert(url + "には飛べませんんー")
+                window.location = encodeURI("https://www.google.com/search?q=" + url);
+                iframe.style.zIndex = 100;
+                back.style.opacity = 1;
+                controll.style.opacity = 0;
             }
 
         }
