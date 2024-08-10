@@ -8,17 +8,18 @@
 </head>
 
 <body>
-    <div style="text-align: center;">
-        <input id="input" value="https://" autofocus style="width: 80vw;font-size: 30px;">
-    </div>
+    <div id="controll">
+        <div style="text-align: center;">
+            <input id="input" value="https://" autofocus style="width: 80vw;font-size: 30px;">
+        </div>
 
-    <div onclick="ini()"
-        style="z-index: -1;position: absolute;top: 0;width: 100vw;height: 50vh;left: 0;background-color: rgb(213, 213, 213);">
+        <div onclick="ini()"
+            style="z-index: -1;position: absolute;top: 0;width: 100vw;height: 50vh;left: 0;background-color: rgb(213, 213, 213);">
+        </div>
+        <div onclick="init()"
+            style="z-index: -1;position: absolute;bottom: 0;width: 100vw;height: 50vh;left: 0;background-color: rgb(157, 157, 157);">
+        </div>
     </div>
-    <div onclick="init()"
-        style="z-index: -1;position: absolute;bottom: 0;width: 100vw;height: 50vh;left: 0;background-color: rgb(157, 157, 157);">
-    </div>
-
     <iframe id="iframe" src="./"
         style="position: absolute;width: 100vw;height: 100vh;z-index: -100;top: 0;left: 0;"></iframe>
 
@@ -29,6 +30,7 @@
         const d = document.getElementById("input");
         const frame = document.getElementById("iframe");
         const back = document.getElementById("back");
+        const controll = document.getElementById("controll");
         function init() {
             const url = d.value;
             try {
@@ -43,6 +45,7 @@
                 iframe.src = url;
                 iframe.style.zIndex = 100;
                 back.style.opacity = 1;
+                controll.style.opacity = 0;
             } catch {
                 alert(url + "には飛べませんんー")
             }
@@ -51,7 +54,7 @@
         function backing() {
             iframe.style.zIndex = -100;
             back.style.opacity = 0;
-            console.log("Ff")
+            controll.style.opacity = 1;
         }
     </script>
 </body>
