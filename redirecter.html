@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecter</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <input id="input" value="https://" autofocus style="width: 80vw;font-size: 30px;">
+    </div>
+
+    <div onclick="ini()"
+        style="z-index: -1;position: absolute;top: 0;width: 100vw;height: 50vh;left: 0;background-color: rgb(213, 213, 213);">
+    </div>
+    <div onclick="init()"
+        style="z-index: -1;position: absolute;bottom: 0;width: 100vw;height: 50vh;left: 0;background-color: rgb(157, 157, 157);">
+    </div>
+
+    <iframe id="iframe" src="./"
+        style="position: absolute;width: 100vw;height: 100vh;z-index: -100;top: 0;left: 0;"></iframe>
+
+    <div id="back" onclick="backing()"
+        style="z-index: 200;opacity: 0;position: absolute;right: 1vw;bottom: 1vw;width: 50px;height: 50px;background-color: black;color: white;font-size: 30px;text-align: center;padding-top: 5px;">
+        ←</div>
+    <script>
+        const d = document.getElementById("input");
+        const frame = document.getElementById("iframe");
+        const back = document.getElementById("back");
+        function init() {
+            const url = d.value;
+            try {
+                window.location = url;
+            } catch {
+                alert(url + "には飛べませんんー")
+            }
+        }
+        function ini() {
+            const url = d.value;
+            try {
+                iframe.src = url;
+                iframe.style.zIndex = 100;
+                back.style.opacity = 1;
+            } catch {
+                alert(url + "には飛べませんんー")
+            }
+
+        }
+        function backing() {
+            iframe.style.zIndex = -100;
+            back.style.opacity = 0;
+            console.log("Ff")
+        }
+    </script>
+</body>
+
+</html>
