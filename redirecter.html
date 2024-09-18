@@ -62,18 +62,10 @@
         }
         function ini() {
             const url = d.value;
-            try {
-                iframe.src = url;
-                iframe.style.zIndex = 100;
-                back.style.opacity = 1;
-                controll.style.opacity = 0;
-            } catch {
-                window.location = encodeURI("https://www.google.com/search?q=" + url);
-                iframe.style.zIndex = 100;
-                back.style.opacity = 1;
-                controll.style.opacity = 0;
-            }
-
+            iframe.src = url;
+            iframe.style.zIndex = 100;
+            back.style.opacity = 1;
+            controll.style.opacity = 0;
         }
         function backing() {
             iframe.style.zIndex = -100;
